@@ -1,4 +1,4 @@
-from .device_socketio import registerConfigHandlers
+from .device import registerConfigHandlers
 
 def registerSockets(socketio):
     registerConfigHandlers(socketio)
