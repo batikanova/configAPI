@@ -19,7 +19,7 @@ def getDeviceRoutes():
             {
                 "event": "device_config",
                 "description": "Socket event for device configuration",
-                "parameters":"{'device_sid':device_sid}",
+                "parameters":"{'device_sid':device_sid, 'configs':configs}",
                 "responseEvent": "device_config_response"
             },
             {

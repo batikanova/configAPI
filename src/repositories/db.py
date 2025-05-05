@@ -1,8 +1,14 @@
 from extensions.db import dbConn, returnConn
 from models.queries import GET_DEVICE_BY_ID_QUERY, ADD_DEVICE_QUERY
 
-def addDevice(deviceId, hostname, companyId, deviceIp, macAddress):
+def addDevice(validatedData):
     conn = None
+    deviceId = validatedData['device_sid']
+    hostname = validatedData['configs']['hostname']
+    deviceIp = validatedData['configs']['device_ip']
+    macAddress = validatedData['configs']['mac_address']
+    companyId = validatedData['configs']['company_id']
+    
     try:
         conn = dbConn()
         if conn is None:

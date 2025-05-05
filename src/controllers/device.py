@@ -14,11 +14,7 @@ def deviceConfigController(data):
     schema = deviceConfigModel()
     try:
         validatedData = schema.load(data)
-        result = addDevice(validatedData['device_sid'], 
-                            validatedData['hostname'], 
-                            validatedData['company_id'], 
-                            validatedData['ip'], 
-                            validatedData['mac'])
+        result = addDevice(validatedData)
         
         return validatedData, result
 
